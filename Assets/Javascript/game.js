@@ -11,34 +11,64 @@ var wins = 0,
 letter = alphabet[Math.round(Math.random() * alphabet.length)];
 console.log("the letter is " + letter);
 
+//set all the values for the scoreboard
+document.getElementById("wins").innerHTML = wins;
+document.getElementById("losses").innerHTML = losses;
+document.getElementById("remaining").innerHTML = remaining;
+document.getElementById("guessed").innerHTML = guessed;
+
 //store key pressed in var userGuess
-document.onkeyup = function (event) {
+document.onkeypress = function (event) {
     userGuess = event.key;
     console.log("userGuess is " + userGuess);
-    //if they guess correctly increase wins and reset
+
+    //check if the current letter has been guessed already
+    for (i = 0; i < guessed.length; i++) {
+        if (userGuess == guessed[i]) {
+            return;
+        }
+    }
+
+    //if they guess correctly increase wins, reset and alert
     if (userGuess == letter){
         wins += 1;
         console.log("wins is " + wins);
         remaining = 9;
         guessed = [];
+        letter = alphabet[Math.round(Math.random() * alphabet.length)];
+        console.log("the letter is " + letter);
         document.getElementById("wins").innerHTML = wins;
+        document.getElementById("losses").innerHTML = losses;
+        document.getElementById("remaining").innerHTML = remaining;
+        document.getElementById("guessed").innerHTML = guessed;
+        window.alert("You won!")
     }
+
+    //if they guess incorrectly and are on their last life increase losses, reset and alert
     else if (remaining == 1) {
         losses += 1;
         console.log("losses is " + losses);
         remaining = 9;
         guessed = [];
+        letter = alphabet[Math.round(Math.random() * alphabet.length)];
+        console.log("the letter is " + letter);
+        document.getElementById("wins").innerHTML = wins;
         document.getElementById("losses").innerHTML = losses;
+        document.getElementById("remaining").innerHTML = remaining;
+        document.getElementById("guessed").innerHTML = guessed;
+        window.alert("You lost!")
     }
+
+    //add key pressed to the guessed array and subtract one remaining guess
     else {
-        //add key pressed to the guessed array and subtract one remaining guess
-        guessed.push(event.key);
+        guessed.push(userGuess);
         remaining -= 1;
-    }
-}
-
-
-
+        document.getElementById("wins").innerHTML = wins;
+        document.getElementById("losses").innerHTML = losses;
+        document.getElementById("remaining").innerHTML = remaining;
+        document.getElementById("guessed").innerHTML = guessed;
+    };
+};
 
 /*attempt #4
     //Available choices
@@ -175,13 +205,13 @@ document.onkeyup = function(event) {
     remaining--;
     }
 };*/
-
-/* attempt #1
+/*
+//attempt #1
 //create click event and have it call userGuess function
 document.addEventListener("keypress", userGuess());
-
+console.log("userGuess");
 //declaring userGuess function
-function userGuess() {
+function userGuess(event) {
     //add a point if the player guesses correctly
     if (event.key == letter){
         wins++;
@@ -201,4 +231,7 @@ function userGuess() {
     guessed.push(event.key);
     remaining--;
     }
-}*/
+    console.log("userGuess")
+    console.log("event.key")
+}
+*/
