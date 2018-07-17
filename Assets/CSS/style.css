@@ -1,0 +1,13 @@
+body {
+    background-image: url("../Assets/Images/crystalball.jpeg");
+    height: 100%;
+    width: 100%;
+}
+#container {
+    position: relative;
+    left: 200px;
+    top: 200px;
+}
+h1 {
+    font-size: 200%;
+}
