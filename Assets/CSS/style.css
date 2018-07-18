@@ -8,16 +8,26 @@ body {
     background-size: contain;
     height: 700px;
     width: 700px;
-    margin: 100px;
 }
 #container {
     position: relative;
-    top: 100px;
-    left: 100px;
+    top: 200px;
+    left: 230px;
     background-color: white;
     align-content: center;
     width: 243px;
 }
 h1 {
     font-size: 200%;
+}
+@media screen and (min-width:768px) {
+    #outercontainer {
+        position: relative;
+        background-image: url("../Images/crystalball.jpeg");
+        background-repeat: no-repeat;
+        background-size: contain;
+        height: 700px;
+        width: 700px;
+        margin: 100px;
+    }
 }
