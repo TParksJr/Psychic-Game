@@ -1,12 +1,22 @@
 body {
-    background-image: url("../Assets/Images/crystalball.jpeg");
-    height: 100%;
-    width: 100%;
+    background-color: black;
+}
+#outercontainer {
+    position: relative;
+    background-image: url("../Images/crystalball.jpeg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 700px;
+    width: 700px;
+    margin: 100px;
 }
 #container {
     position: relative;
-    left: 200px;
-    top: 200px;
+    top: 100px;
+    left: 100px;
+    background-color: white;
+    align-content: center;
+    width: 243px;
 }
 h1 {
     font-size: 200%;

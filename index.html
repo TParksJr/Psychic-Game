@@ -3,30 +3,32 @@
 
 <head>
     <title>Psychic Game</title>
-    <link href="Assets/CSS/reset.css">
-    <link href="Assets/CSS/style.css">
+    <link rel="stylesheet" type="text/css" href="Assets/CSS/reset.css">
+    <link rel="stylesheet" type="text/css" href="Assets/CSS/style.css">
 </head>
 
 <body>
-    <div id="container">
-        <h1>The Psychic Game</h1>
-        <p>Guess what letter I'm thinking of!</p>
-        <p>
-            Wins :
-            <span id="wins"></span>
-        </p>
-        <p>
-            Losses :
-            <span id="losses"></span>
-        </p>
-        <p>
-            Remaining Guesses :
-            <span id="remaining"></span>
-        </p>
-        <p>
-            Guessed so far :
-            <span id="guessed"></span>
-        </p>
+    <div id="outercontainer">
+        <div id="container">
+            <h1>The Psychic Game</h1>
+            <p>Guess what letter I'm thinking of!</p>
+            <p>
+                Wins :
+                <span id="wins"></span>
+            </p>
+            <p>
+                Losses :
+                <span id="losses"></span>
+            </p>
+            <p>
+                Remaining Guesses :
+                <span id="remaining"></span>
+            </p>
+            <p>
+                Guessed so far :
+                <span id="guessed"></span>
+            </p>
+        </div>
     </div>
     <script src="Assets/Javascript/game.js"></script>
 </body>
