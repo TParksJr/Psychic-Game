@@ -1,4 +1,8 @@
+html {
+    height: 100%;
+}
 body {
+    height: 100%;
     background-color: black;
 }
 #outercontainer {
@@ -6,28 +10,46 @@ body {
     background-image: url("../Images/crystalball.jpeg");
     background-repeat: no-repeat;
     background-size: contain;
-    height: 700px;
-    width: 700px;
+    height: 500px;
+    width: auto;
 }
 #container {
-    position: relative;
-    top: 200px;
-    left: 230px;
+    position: absolute;
+    top: 223px;
+    left: 256px;
     background-color: white;
-    align-content: center;
-    width: 243px;
 }
 h1 {
     font-size: 200%;
 }
-@media screen and (min-width:768px) {
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-rows: 1fr 3fr 1fr;
+    grid-gap: 0px;
+}
+@media screen and (max-width:1240px) {
+    .grid-container {
+        display: grid;
+        grid-template-columns: 0fr 1fr 0fr;
+        grid-template-rows: 0fr 1fr 0fr;
+        grid-gap: 0px;
+    }
+}
+@media screen and (max-width:745px) {
     #outercontainer {
+        background-image: url("");
+    }
+    #container {
         position: relative;
-        background-image: url("../Images/crystalball.jpeg");
-        background-repeat: no-repeat;
-        background-size: contain;
-        height: 700px;
-        width: 700px;
-        margin: 100px;
+        top: 200px;
+        left: 200px;
+        width: 250px
+    }
+}
+@media screen and (max-width:620px) {
+    #container {
+        top: 20px;
+        left: 20px;
     }
 }
